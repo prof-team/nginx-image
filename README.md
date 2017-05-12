@@ -6,4 +6,4 @@
 
 2. Now you can run image
 
-`docker run -it grischuksasha/test bash`
+`docker run -it grischuksasha/nginx sh`
