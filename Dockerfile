@@ -1,4 +1,4 @@
-FROM nginx:1.13.0-alpine
+FROM nginx:1.13-alpine
 
 ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/
