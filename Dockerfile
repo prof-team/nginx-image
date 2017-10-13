@@ -11,7 +11,7 @@ ADD ./conf.d/gzip.conf /etc/nginx/conf.d/
 
 RUN rm /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p /var/www && chown -R nginx:nginx /var/www
+RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
 
 WORKDIR /var/www
 
