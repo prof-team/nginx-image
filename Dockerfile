@@ -6,8 +6,9 @@ RUN addgroup -g 1000 -S www-data \
 ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/
 ADD ./cross-domain-fonts.conf /etc/nginx/
+ADD ./cloudflare.conf /etc/nginx/
 
-ADD ./conf.d/gzip.conf /etc/nginx/conf.d/
+ADD ./conf.d/*.conf /etc/nginx/conf.d/
 
 RUN rm /etc/nginx/conf.d/default.conf
 
