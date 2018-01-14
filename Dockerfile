@@ -3,6 +3,8 @@ FROM nginx:1.13-alpine
 RUN addgroup -g 1000 -S www-data \
  && adduser -u 1000 -D -S -G www-data www-data
 
+RUN apk add nano
+
 ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/
 ADD ./cross-domain-fonts.conf /etc/nginx/
