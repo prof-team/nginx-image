@@ -68,4 +68,5 @@ server {
     
     # if you use cloudflare
     # include cloudflare.conf;
+}
 ```
