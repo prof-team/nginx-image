@@ -8,7 +8,7 @@
 
 `docker run -it grischuksasha/nginx sh`
 
-## Example docker-compose.yml
+## Example docker-compose.yml for nginx
 ```
 version: '3'
 
