@@ -1,4 +1,4 @@
-# nginx docker
+# docker nginx with logrotate
 
 1. Pull image from [docker hub](https://hub.docker.com/r/grischuksasha/nginx/)
 
