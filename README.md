@@ -7,3 +7,21 @@
 2. Now you can run image
 
 `docker run -it grischuksasha/nginx sh`
+
+## Example docker-compose.yml
+```
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: grischuksasha/nginx
+    volumes:
+      - /var/log/nginx:/var/log/nginx
+      - .:/var/www/
+      - ./sites-enabled:/etc/nginx/sites-enabled
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: "always"
+```

@@ -3,7 +3,9 @@ FROM nginx:1.13-alpine
 RUN addgroup -g 1000 -S www-data \
  && adduser -u 1000 -D -S -G www-data www-data
 
-RUN apk add --update nano git && rm -rf /var/cache/apk/*
+RUN apk add --update nano git logrotate && rm -rf /var/cache/apk/*
+
+ADD ./logrotate/nginx /etc/logrotate.d/nginx
 
 ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/
