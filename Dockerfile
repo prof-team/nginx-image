@@ -11,6 +11,7 @@ ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/
 ADD ./cross-domain-fonts.conf /etc/nginx/
 ADD ./cloudflare.conf /etc/nginx/
+ADD ./php-fpm.conf /etc/nginx/
 
 ADD ./conf.d/*.conf /etc/nginx/conf.d/
 
