@@ -23,3 +23,5 @@ WORKDIR /var/www
 
 EXPOSE 80
 EXPOSE 443
+
+CMD service cron start && nginx -g 'daemon off;'
