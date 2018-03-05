@@ -1,7 +1,7 @@
 FROM nginx:1.13
 
 RUN apt-get update \
-	&& apt-get install -y nano git logrotate supervisor
+	&& apt-get install -y htop nano git logrotate supervisor
 
 ADD ./logrotate/nginx /etc/logrotate.d/nginx
 
@@ -22,7 +22,7 @@ RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 WORKDIR /var/www
 
