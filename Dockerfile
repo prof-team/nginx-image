@@ -1,9 +1,7 @@
-FROM nginx:1.13-alpine
+FROM nginx:1.13
 
-RUN addgroup -g 1000 -S www-data \
- && adduser -u 1000 -D -S -G www-data www-data
-
-RUN apk add --update nano git logrotate dcron && rm -rf /var/cache/apk/*
+RUN apt-get update \
+	&& apt-get install -y nano git logrotate supervisor
 
 ADD ./logrotate/nginx /etc/logrotate.d/nginx
 
@@ -15,10 +13,16 @@ ADD ./php-fpm.conf /etc/nginx/
 
 ADD ./conf.d/*.conf /etc/nginx/conf.d/
 
+ADD ./supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 RUN rm /etc/nginx/conf.d/default.conf
 
 RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
-RUN mkdir -p /var/log/cron && mkdir -m 0644 -p /var/spool/cron/crontabs && touch /var/log/cron/cron.log && mkdir -m 0644 -p /etc/cron.d
+
+RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+CMD ["/usr/bin/supervisord"]
 
 WORKDIR /var/www
 
