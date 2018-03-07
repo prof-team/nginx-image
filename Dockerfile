@@ -19,6 +19,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 RUN rm /etc/cron.daily/logrotate
 ADD ./cron/logrotate /etc/cron.d/logrotate
+RUN crontab /etc/cron.d/logrotate
 
 RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
 
