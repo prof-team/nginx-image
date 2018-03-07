@@ -17,6 +17,9 @@ ADD ./supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN rm /etc/nginx/conf.d/default.conf
 
+RUN rm /etc/cron.daily/logrotate
+ADD ./cron/logrotate /etc/cron.d/logrotate
+
 RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
 
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
