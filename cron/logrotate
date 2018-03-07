@@ -1,1 +1,1 @@
-10 0 * * * root /usr/sbin/logrotate -f /etc/logrotate.conf
+10 10 * * * /usr/sbin/logrotate -f /etc/logrotate.conf
