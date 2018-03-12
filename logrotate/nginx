@@ -7,6 +7,8 @@
   notifempty
   create 640 root root
   postrotate
-    kill -USR2 1
+    if [ -f /run/nginx.pid ]; then
+        kill -USR1 `cat /run/nginx.pid`
+    fi
   endscript
 }
