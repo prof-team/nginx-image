@@ -10,5 +10,9 @@
     if [ -f /run/nginx.pid ]; then
         kill -USR1 `cat /run/nginx.pid`
     fi
+
+    if [ -f /run/supervisord.pid ]; then
+        kill -USR2 `cat /run/supervisord.pid`
+    fi
   endscript
 }
