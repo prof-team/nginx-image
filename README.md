@@ -16,6 +16,15 @@ services:
   nginx:
     container_name: nginx
     image: grischuksasha/nginx
+    environment:
+      WORKER_PROCESSES: 1 # default value 2
+      WORKER_CONNECTIONS: 768 # default value 1024
+      CLIENT_MAX_BODY_SIZE: 20m # default value 1024
+      FASTCGI_PASS: 'php-fpm:9000' # default value php:9000
+      FASTCGI_CONNECT_TIMEOUT: 30s # default value 60s
+      FASTCGI_READ_TIMEOUT: 60s # default value 150s
+      FASTCGI_SEND_TIMEOUT: 90s # default value 180s
+      GZIP_STATUS: 'off' # default value on
     volumes:
       - /var/log/nginx:/var/log/nginx
       - .:/var/www/
