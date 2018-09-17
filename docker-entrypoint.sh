@@ -13,9 +13,6 @@ fi
 if [ -n "$FASTCGI_PASS" ]; then
     sed -i "s/fastcgi_pass .*/fastcgi_pass $FASTCGI_PASS;/" /etc/nginx/php-fpm.conf
 fi
-if [ -n "$PHPFPM_LOCATION" ]; then
-    sed -i "s/location ~ .*/location $PHPFPM_LOCATION {/" /etc/nginx/php-fpm.conf
-fi
 if [ -n "$FASTCGI_CONNECT_TIMEOUT" ]; then
     sed -i "s/fastcgi_connect_timeout.*/fastcgi_connect_timeout $FASTCGI_CONNECT_TIMEOUT;/" /etc/nginx/php-fpm.conf
 fi
