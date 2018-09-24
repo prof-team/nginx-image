@@ -9,6 +9,7 @@ ADD ./cross-domain-fonts.conf /etc/nginx/
 ADD ./cloudflare.conf /etc/nginx/
 ADD ./php-fpm.conf /etc/nginx/
 ADD ./php-fpm-index.conf /etc/nginx/
+ADD ./ssl-params.conf /etc/nginx/
 
 ADD ./conf.d/*.conf /etc/nginx/conf.d/
 
