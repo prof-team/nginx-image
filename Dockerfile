@@ -1,4 +1,4 @@
-FROM nginx:1.13
+FROM nginx:1.15
 LABEL maintainer="Grischuk Sasha <grischuk.alexandr@gmail.com>"
 
 RUN apt-get update \
