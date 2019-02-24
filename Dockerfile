@@ -1,5 +1,4 @@
 FROM nginx:1.15
-LABEL maintainer="Grischuk Sasha <grischuk.alexandr@gmail.com>"
 
 RUN apt-get update \
 	&& apt-get install -y htop nano git

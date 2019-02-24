@@ -1,12 +1,12 @@
 # docker nginx with logrotate
 
-1. Pull image from [docker hub](https://hub.docker.com/r/grischuksasha/nginx/)
+1. Pull image from [docker hub](https://hub.docker.com/r/profteam/nginx)
 
-`docker pull grischuksasha/nginx`
+`docker pull profteam/nginx`
 
 2. Now you can run image
 
-`docker run -it grischuksasha/nginx sh`
+`docker run -it profteam/nginx sh`
 
 ## Example docker-compose.yml for nginx
 ```
