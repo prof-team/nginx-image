@@ -8,5 +8,6 @@ build:
   before_script:
     - docker login -u $DOCKER_LOGIN -p$DOCKER_PASS
   script:
+    - printenv
     - docker build -t profteam/nginx .
     - docker push profteam/nginx
