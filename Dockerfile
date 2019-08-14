@@ -1,7 +1,7 @@
 FROM nginx:1.15
 
 RUN apt-get update \
-	&& apt-get install -y htop nano git
+	&& apt-get install -y htop nano git geoip-database libgeoip1
 
 ADD ./nginx.conf /etc/nginx/
 ADD ./expires.conf /etc/nginx/

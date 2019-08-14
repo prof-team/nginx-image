@@ -31,4 +31,8 @@ if [ -n "$GZIP_STATUS" ]; then
     sed -i "s/gzip_vary .*/gzip_vary $GZIP_STATUS;/" /etc/nginx/conf.d/gzip.conf
 fi
 
+if [ -n "$ENABLE_GEOIP_MODULE" ]; then
+    sed -i "s/#GEOIP_MODULE.*/load_module \"modules\/ngx_http_geoip_module.so\";/" /etc/nginx/nginx.conf
+fi
+
 exec "$@"
